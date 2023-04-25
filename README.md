@@ -1,4 +1,4 @@
-https://github.com/Anton-Emelyanov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
+``` https://github.com/Anton-Emelyanov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
 
 # api_yamdb
 Cервис для публикации отзывов, рейтингов и комментариев к различным произведениям.
