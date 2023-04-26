@@ -10,10 +10,11 @@ from rest_framework.permissions import (
 )
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+
 from api_yamdb import settings
 from reviews.models import (
-    Category, Genre, Review, Title, User
-)
+    Category, Genre, Review, Title, User)
+
 from .mixins import CRDViewSet
 from .serializers import (
     CategorySerializer, CommentSerializer, GenreSerializer, ReviewSerializer,
@@ -116,7 +117,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
-def Token(request):
+def token(request):
     """Метод получения токена."""
     serializer = TokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -135,7 +136,7 @@ def Token(request):
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
-def Signup(request):
+def signup(request):
     """Метод авторизации через отправку письма."""
     serializer = SignupSerializer(data=request.data)
     if User.objects.filter(
