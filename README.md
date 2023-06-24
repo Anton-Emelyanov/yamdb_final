@@ -26,13 +26,30 @@ Cервис для публикации отзывов, рейтингов и к
 
 ``` docker-compose up -d --build ```
 
-5. API-сервис будет доступен по  адресу:
+5. Собирите статику:
 
-``` http://localhost/ ```
+``` sudo docker-compose exec web python manage.py collectstatic --no-input ```
+
+6. Создайте дамп:
+
+``` sudo docker-compose exec web python manage.py dumpdata > fixtures.json ```
+
+7. Примените миграции:
+
+``` sudo docker-compose exec web python manage.py makemigrations ``` \
+``` sudo docker-compose exec web python manage.py migrate --noinput ```
+
+8. Создайте суперпользователя:
+
+``` sudo docker-compose exec web python manage.py createsuperuser ```
+
 
 - Для работы с API можно использовать различные инструменты, такие как curl или Postman. Подробнее о том, как использовать API, можно узнать из документации, которая доступна по адресу: 
     
 ``` http://84.201.130.23/redoc/ ```
+
+## GitHub Secrets
+DOCKER_USERNAME - имя пользователя в DockerHub DOCKER_PASSWORD - пароль пользователя в DockerHub HOST - ip-адрес сервера USER - пользователь SSH_KEY - приватный ssh-ключ (публичный должен быть на сервере) PASSPHRASE - кодовая фраза для ssh-ключа TELEGRAM_TO - id чата в телеграме TELEGRAM_TOKEN - токен телеграм бота
 
 ### Автор
 Антон Емельянов
