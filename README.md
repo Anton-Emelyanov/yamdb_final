@@ -50,6 +50,6 @@ Cервис для публикации отзывов, рейтингов и к
 ## GitHub Secrets
 DOCKER_USERNAME - имя пользователя в DockerHub DOCKER_PASSWORD - пароль пользователя в DockerHub HOST - ip-адрес сервера USER - пользователь SSH_KEY - приватный ssh-ключ (публичный должен быть на сервере) PASSPHRASE - кодовая фраза для ssh-ключа TELEGRAM_TO - id чата в телеграме TELEGRAM_TOKEN - токен телеграм бота
 
-### Авторh
+### Автор
 Антон Емельянов
 
