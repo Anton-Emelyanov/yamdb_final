@@ -30,19 +30,18 @@ Cервис для публикации отзывов, рейтингов и к
 
 ``` sudo docker-compose exec web python manage.py collectstatic --no-input ```
 
-6. Создайте дамп:
-
-``` sudo docker-compose exec web python manage.py dumpdata > fixtures.json ```
-
-7. Примените миграции:
+6. Примените миграции:
 
 ``` sudo docker-compose exec web python manage.py makemigrations ``` \
 ``` sudo docker-compose exec web python manage.py migrate --noinput ```
 
-8. Создайте суперпользователя:
+7. Создайте суперпользователя:
 
 ``` sudo docker-compose exec web python manage.py createsuperuser ```
 
+8. Заполните базу:
+
+``` sudo docker-compose exec web python manage.py loaddata fixtures.json ```
 
 - Для работы с API можно использовать различные инструменты, такие как curl или Postman. Подробнее о том, как использовать API, можно узнать из документации, которая доступна по адресу: 
     
